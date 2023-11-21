@@ -5,6 +5,7 @@
 //  Created by Tatiana Simmer on 21/11/2023.
 //
 import UIKit
+
 extension MenuViewController {
     func setupConstraints() {
         // Create main stack view
@@ -23,7 +24,6 @@ extension MenuViewController {
         guard let tableView = tableView else { return }
         tableView.translatesAutoresizingMaskIntoConstraints = false
         verticalStackView.addArrangedSubview(tableView)
-
 
         // Add the horizontal stack view to the main stack view
         mainStackView.addArrangedSubview(verticalStackView)

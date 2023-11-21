@@ -10,37 +10,25 @@ import UIKit
 class MenuViewController: UIViewController {
     var sections: [MenuCategory] = []
     var tableView: UITableView!
-    
     lazy var presenter: Presenter = Presenter(view: self)
     
-    private let titleLabel: UILabel = {
-        let lbl = UILabel()
-        lbl.text = "Menu"
-        lbl.font = UIFont.preferredFont(forTextStyle: .headline)
-        lbl.sizeToFit()
-        return lbl
-    }()
     
     //MARK: View Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationItem.titleView = titleLabel
+        view.backgroundColor = .white
+        title = "Menu"
+
         tableView = UITableView()
+        self.tableView.separatorStyle = .none
         
-        if let tableView = tableView {
-            view.addSubview(tableView)
-            
-            tableView.delegate = self
-            tableView.dataSource = self
-            
-            tableView.register(CustomCell.self, forCellReuseIdentifier: CustomCell.id)
-            setupConstraints()
-            presenter.getData()
-        } else {
-            print("Error: Unable to create table views")
-        }
-        
+        view.addSubview(tableView)
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.register(CustomCell.self, forCellReuseIdentifier: CustomCell.id)
+        setupConstraints()
+        presenter.getData()
     }
 }
 
@@ -50,10 +38,8 @@ extension MenuViewController: ViewPresenter {
             print("Error: Missing menu categories")
             return
         }
-       
         let pizzasCategory = MenuCategory(name: "Pizzas", dishes: pizzas)
         let entriesCategory = MenuCategory(name: "Entrées", dishes: entries)
-        print(pizzasCategory, entriesCategory)
         self.sections = [entriesCategory, pizzasCategory]
         tableView.reloadData()
     }
@@ -69,14 +55,15 @@ extension MenuViewController: UITableViewDelegate, UITableViewDataSource {
         let customCell = tableView.dequeueReusableCell(withIdentifier: CustomCell.id, for: indexPath) as! CustomCell
         let dishes = self.sections[indexPath.section].dishes
         let dish = dishes[indexPath.row]
-        print(indexPath.section, indexPath.row)
+        
         configureCell(customCell, with: dish)
         return customCell
     }
+    
     func numberOfSections(in tableView: UITableView) -> Int {
         return  sections.count
     }
-
+    
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return self.sections[section].name
     }

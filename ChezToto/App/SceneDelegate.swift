@@ -14,19 +14,19 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let windowScene = (scene as? UIWindowScene) else { return }
 
-//        // Create an instance of your MenuViewController
-//        let menuViewController = MenuViewController()
-//
-//        // Embed the MenuViewController in a UINavigationController
-//        let navigationController = UINavigationController(rootViewController: menuViewController)
-//
-//        // Create a UIWindow using the windowScene constructor
-//        let window = UIWindow(windowScene: windowScene)
-//        window.rootViewController = navigationController
-//
-//        // Set the newly created window as the key window and make it visible
-//        self.window = window
-//        window.makeKeyAndVisible()
+        // Create an instance of your MenuViewController
+        let menuViewController = MenuViewController()
+
+        // Embed the MenuViewController in a UINavigationController
+        let navigationController = UINavigationController(rootViewController: menuViewController)
+
+        // Create a UIWindow using the windowScene constructor
+        let window = UIWindow(windowScene: windowScene)
+        window.rootViewController = navigationController
+
+        // Set the newly created window as the key window and make it visible
+        self.window = window
+        window.makeKeyAndVisible()
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
