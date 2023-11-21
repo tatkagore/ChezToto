@@ -17,7 +17,7 @@ class CustomCell: UITableViewCell {
         return view
     }()
     
-        lazy var dishImageView: UIImageView = {
+    lazy var dishImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFit
         imageView.translatesAutoresizingMaskIntoConstraints = false
@@ -56,7 +56,7 @@ class CustomCell: UITableViewCell {
         return label
     }()
     
-
+    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
@@ -78,20 +78,36 @@ class CustomCell: UITableViewCell {
             
             dishImageView.leadingAnchor.constraint(equalTo: containerView.leadingAnchor),
             dishImageView.topAnchor.constraint(equalTo: containerView.topAnchor),
-            dishImageView.bottomAnchor.constraint(equalTo: containerView.bottomAnchor),
             dishImageView.widthAnchor.constraint(equalToConstant: 120),
-            dishImageView.heightAnchor.constraint(equalToConstant: 120),
+            dishImageView.heightAnchor.constraint(equalTo: dishImageView.widthAnchor, multiplier: 1.0), // Maintain aspect ratio
+            dishImageView.bottomAnchor.constraint(lessThanOrEqualTo: containerView.bottomAnchor),
             
             stackView.leadingAnchor.constraint(equalTo: dishImageView.trailingAnchor, constant: 8),
             stackView.trailingAnchor.constraint(equalTo: containerView.trailingAnchor),
             stackView.topAnchor.constraint(equalTo: containerView.topAnchor),
-            stackView.bottomAnchor.constraint(equalTo: containerView.bottomAnchor)
+            stackView.bottomAnchor.constraint(lessThanOrEqualTo: containerView.bottomAnchor)
+            
         ])
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
+    override func layoutSubviews() {
+            super.layoutSubviews()
+
+            let margin: CGFloat = 10
+            contentView.frame = contentView.frame.inset(by: UIEdgeInsets(top: margin, left: margin, bottom: margin, right: margin))
+
+            // Apply corner radius to the cell's content view
+            contentView.layer.cornerRadius = 15
+            contentView.layer.masksToBounds = true
+
+            // Add a bit of spacing between cells
+            contentView.layer.borderWidth = 1
+            contentView.layer.borderColor = UIColor(ciColor: .gray).withAlphaComponent(0.5).cgColor
+        }
 }
 
 
