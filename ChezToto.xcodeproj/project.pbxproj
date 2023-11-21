@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		7BDC44022B0CD35F00377F0E /* MenuCustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BDC44012B0CD35F00377F0E /* MenuCustomCell.swift */; };
+		7BF3EDEC2B0CF68500AFC77E /* MenuConstraintsSetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BF3EDEB2B0CF68500AFC77E /* MenuConstraintsSetup.swift */; };
+		7BF3EDEE2B0CF69E00AFC77E /* MenuTableHeaders.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BF3EDED2B0CF69E00AFC77E /* MenuTableHeaders.swift */; };
 		7BFAE3462B0CC5DB00EB6299 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BFAE3452B0CC5DB00EB6299 /* AppDelegate.swift */; };
 		7BFAE3482B0CC5DB00EB6299 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BFAE3472B0CC5DB00EB6299 /* SceneDelegate.swift */; };
 		7BFAE34A2B0CC5DB00EB6299 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BFAE3492B0CC5DB00EB6299 /* MenuViewController.swift */; };
@@ -20,6 +22,8 @@
 
 /* Begin PBXFileReference section */
 		7BDC44012B0CD35F00377F0E /* MenuCustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuCustomCell.swift; sourceTree = "<group>"; };
+		7BF3EDEB2B0CF68500AFC77E /* MenuConstraintsSetup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuConstraintsSetup.swift; sourceTree = "<group>"; };
+		7BF3EDED2B0CF69E00AFC77E /* MenuTableHeaders.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuTableHeaders.swift; sourceTree = "<group>"; };
 		7BFAE3422B0CC5DB00EB6299 /* ChezToto.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChezToto.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7BFAE3452B0CC5DB00EB6299 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7BFAE3472B0CC5DB00EB6299 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -43,6 +47,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7BF3EDEA2B0CF67300AFC77E /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				7BF3EDEB2B0CF68500AFC77E /* MenuConstraintsSetup.swift */,
+				7BF3EDED2B0CF69E00AFC77E /* MenuTableHeaders.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		7BFAE3392B0CC5DB00EB6299 = {
 			isa = PBXGroup;
 			children = (
@@ -75,6 +88,7 @@
 		7BFAE3592B0CC6F900EB6299 /* Menu */ = {
 			isa = PBXGroup;
 			children = (
+				7BF3EDEA2B0CF67300AFC77E /* Extensions */,
 				7BFAE3492B0CC5DB00EB6299 /* MenuViewController.swift */,
 				7BFAE35B2B0CC82A00EB6299 /* MenuPresenter.swift */,
 				7BFAE35D2B0CC83700EB6299 /* MenuModel.swift */,
@@ -165,7 +179,9 @@
 			files = (
 				7BFAE34A2B0CC5DB00EB6299 /* MenuViewController.swift in Sources */,
 				7BDC44022B0CD35F00377F0E /* MenuCustomCell.swift in Sources */,
+				7BF3EDEE2B0CF69E00AFC77E /* MenuTableHeaders.swift in Sources */,
 				7BFAE3462B0CC5DB00EB6299 /* AppDelegate.swift in Sources */,
+				7BF3EDEC2B0CF68500AFC77E /* MenuConstraintsSetup.swift in Sources */,
 				7BFAE3482B0CC5DB00EB6299 /* SceneDelegate.swift in Sources */,
 				7BFAE35E2B0CC83700EB6299 /* MenuModel.swift in Sources */,
 				7BFAE35C2B0CC82A00EB6299 /* MenuPresenter.swift in Sources */,

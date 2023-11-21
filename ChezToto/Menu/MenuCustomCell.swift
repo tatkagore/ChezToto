@@ -17,7 +17,7 @@ class CustomCell: UITableViewCell {
         return view
     }()
     
-    private lazy var dishImageView: UIImageView = {
+        lazy var dishImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFit
         imageView.translatesAutoresizingMaskIntoConstraints = false
@@ -52,9 +52,10 @@ class CustomCell: UITableViewCell {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = UIFont.systemFont(ofSize: 14)
-        label.textColor = .green
+        label.textColor = .blue
         return label
     }()
+    
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -78,7 +79,8 @@ class CustomCell: UITableViewCell {
             dishImageView.leadingAnchor.constraint(equalTo: containerView.leadingAnchor),
             dishImageView.topAnchor.constraint(equalTo: containerView.topAnchor),
             dishImageView.bottomAnchor.constraint(equalTo: containerView.bottomAnchor),
-            dishImageView.widthAnchor.constraint(equalToConstant: 80), // Adjust image width as needed
+            dishImageView.widthAnchor.constraint(equalToConstant: 120),
+            dishImageView.heightAnchor.constraint(equalToConstant: 120),
             
             stackView.leadingAnchor.constraint(equalTo: dishImageView.trailingAnchor, constant: 8),
             stackView.trailingAnchor.constraint(equalTo: containerView.trailingAnchor),

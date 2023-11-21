@@ -36,8 +36,11 @@ class MenuViewController: UIViewController {
             entriesTableView.register(CustomCell.self, forCellReuseIdentifier: CustomCell.id)
             
             // Position and size the table views within the view hierarchy
-            pizzasTableView.frame = CGRect(x: 0, y: 0, width: view.bounds.width / 2, height: view.bounds.height)
-            entriesTableView.frame = CGRect(x: view.bounds.width / 2, y: 0, width: view.bounds.width / 2, height: view.bounds.height)
+            setupConstraints() // Calling the constraints setup from MenuConstraintsSetup.swift
+            
+            // Set table view headers
+            pizzasTableView.tableHeaderView = createTableHeaderView(title: "Pizzas") // Calling createTableHeaderView from MenuTableHeaders.swift
+            entriesTableView.tableHeaderView = createTableHeaderView(title: "Entrées") // Calling createTableHeaderView from MenuTableHeaders.swift
             
             presenter.getData()
         } else {
@@ -52,17 +55,17 @@ extension MenuViewController: ViewPresenter {
             print("Error: Missing menu categories")
             return
         }
-
+        
         let pizzasCategory = MenuCategory(name: "Pizzas", dishes: pizzas)
         let entriesCategory = MenuCategory(name: "Entrées", dishes: entries)
-
+        
         self.pizzas = [pizzasCategory]
         self.entries = [entriesCategory]
-
+        
         pizzasTableView.reloadData()
         entriesTableView.reloadData()
     }
-
+    
     func getData(data: [MenuCategory]) {
         // Implement this if you need to handle an array of MenuCategory objects
     }
@@ -100,5 +103,9 @@ extension MenuViewController: UITableViewDelegate, UITableViewDataSource {
         cell.dishName.text = dish.name
         cell.dishDescription.text = dish.description
         cell.dishPrice.text = "$\(dish.price)"
+        
+        // Set dish image based on pictureName
+        let imageName = dish.pictureName
+        cell.dishImageView.image = UIImage(named: imageName)
     }
 }
