@@ -6,3 +6,21 @@
 //
 
 import Foundation
+
+class HomePresenter {
+    let restaurantService = RestaurantService()
+    let view: HomeViewPresenter
+    
+    init(view: HomeViewPresenter) {
+        self.view = view
+    }
+    
+    func getData() {
+        let restaurant = restaurantService.getRestaurant()
+        self.view.getData(data: [restaurant])
+    }
+}
+
+protocol HomeViewPresenter {
+    func getData(data: [Restaurant])
+}

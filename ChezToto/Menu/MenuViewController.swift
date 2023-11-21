@@ -12,7 +12,6 @@ class MenuViewController: UIViewController {
     var tableView: UITableView!
     lazy var presenter: Presenter = Presenter(view: self)
     
-    
     //MARK: View Lifecycle
     
     override func viewDidLoad() {

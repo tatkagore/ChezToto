@@ -12,6 +12,8 @@
 		7BF3EDF12B0D3B6500AFC77E /* HomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BF3EDF02B0D3B6500AFC77E /* HomePresenter.swift */; };
 		7BF3EDF32B0D3B7200AFC77E /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BF3EDF22B0D3B7200AFC77E /* HomeViewController.swift */; };
 		7BF3EDF52B0D3B7E00AFC77E /* HomeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BF3EDF42B0D3B7E00AFC77E /* HomeModel.swift */; };
+		7BF3EDF92B0D4A9E00AFC77E /* HomeCustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BF3EDF82B0D4A9E00AFC77E /* HomeCustomCell.swift */; };
+		7BF3EDFB2B0D4C1100AFC77E /* HomeConstraintsSetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BF3EDFA2B0D4C1100AFC77E /* HomeConstraintsSetup.swift */; };
 		7BFAE3462B0CC5DB00EB6299 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BFAE3452B0CC5DB00EB6299 /* AppDelegate.swift */; };
 		7BFAE3482B0CC5DB00EB6299 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BFAE3472B0CC5DB00EB6299 /* SceneDelegate.swift */; };
 		7BFAE34A2B0CC5DB00EB6299 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BFAE3492B0CC5DB00EB6299 /* MenuViewController.swift */; };
@@ -28,6 +30,8 @@
 		7BF3EDF02B0D3B6500AFC77E /* HomePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresenter.swift; sourceTree = "<group>"; };
 		7BF3EDF22B0D3B7200AFC77E /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		7BF3EDF42B0D3B7E00AFC77E /* HomeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeModel.swift; sourceTree = "<group>"; };
+		7BF3EDF82B0D4A9E00AFC77E /* HomeCustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCustomCell.swift; sourceTree = "<group>"; };
+		7BF3EDFA2B0D4C1100AFC77E /* HomeConstraintsSetup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeConstraintsSetup.swift; sourceTree = "<group>"; };
 		7BFAE3422B0CC5DB00EB6299 /* ChezToto.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChezToto.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7BFAE3452B0CC5DB00EB6299 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7BFAE3472B0CC5DB00EB6299 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -62,11 +66,21 @@
 		7BF3EDEF2B0D3B5200AFC77E /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				7BF3EDFC2B0D4CC700AFC77E /* Extensions */,
 				7BF3EDF02B0D3B6500AFC77E /* HomePresenter.swift */,
 				7BF3EDF22B0D3B7200AFC77E /* HomeViewController.swift */,
 				7BF3EDF42B0D3B7E00AFC77E /* HomeModel.swift */,
+				7BF3EDF82B0D4A9E00AFC77E /* HomeCustomCell.swift */,
 			);
 			path = Home;
+			sourceTree = "<group>";
+		};
+		7BF3EDFC2B0D4CC700AFC77E /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				7BF3EDFA2B0D4C1100AFC77E /* HomeConstraintsSetup.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		7BFAE3392B0CC5DB00EB6299 = {
@@ -198,9 +212,11 @@
 				7BF3EDEC2B0CF68500AFC77E /* MenuConstraintsSetup.swift in Sources */,
 				7BF3EDF32B0D3B7200AFC77E /* HomeViewController.swift in Sources */,
 				7BFAE3482B0CC5DB00EB6299 /* SceneDelegate.swift in Sources */,
+				7BF3EDF92B0D4A9E00AFC77E /* HomeCustomCell.swift in Sources */,
 				7BF3EDF12B0D3B6500AFC77E /* HomePresenter.swift in Sources */,
 				7BFAE35E2B0CC83700EB6299 /* MenuModel.swift in Sources */,
 				7BFAE35C2B0CC82A00EB6299 /* MenuPresenter.swift in Sources */,
+				7BF3EDFB2B0D4C1100AFC77E /* HomeConstraintsSetup.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
