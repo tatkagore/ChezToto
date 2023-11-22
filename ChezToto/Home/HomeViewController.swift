@@ -10,7 +10,8 @@ import UIKit
 
 class HomeViewController: UIViewController {
     
-    let imageView = UIImageView()
+    let bannerImageView = UIImageView()
+    let mapImageView = UIImageView()
     let tableView = UITableView()
     
     let addressLabel: UILabel = {
@@ -39,6 +40,17 @@ class HomeViewController: UIViewController {
         label.numberOfLines = 2
         return label
     }()
+
+    let menuButton: UIButton = {
+        let menuButton = UIButton(type: .system)
+        menuButton.setTitle("Accéder au menu", for: .normal)
+        menuButton.titleLabel?.font = UIFont.systemFont(ofSize: 18)
+        menuButton.setTitleColor(.white, for: .normal)
+        menuButton.backgroundColor = UIColor(named: "myRed")
+        menuButton.layer.cornerRadius = 8
+        menuButton.addTarget(self, action: #selector(menuButtonTapped), for: .touchUpInside)
+        return menuButton
+    }()
     
     var restaurant: Restaurant = Restaurant(timings: [], address: "", website: "", phoneNumber: "")
     lazy var presenter: HomePresenter = HomePresenter(view: self)
@@ -53,7 +65,14 @@ class HomeViewController: UIViewController {
         setupViews()
         setupConstraints()
     }
+    
+    @objc func menuButtonTapped() {
+            let menuViewController = MenuViewController()
+            navigationController?.pushViewController(menuViewController, animated: true)
+            }
 }
+
+
 
 extension HomeViewController: HomeViewPresenter {
     func getData(data: [Restaurant]) {
