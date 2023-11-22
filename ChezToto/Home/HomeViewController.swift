@@ -13,11 +13,41 @@ class HomeViewController: UIViewController {
     let imageView = UIImageView()
     let tableView = UITableView()
     
+    let addressLabel: UILabel = {
+        let label = UILabel()
+        label.textColor = UIColor.black
+        label.font = UIFont.systemFont(ofSize: 16)
+        label.textColor = .gray
+        label.numberOfLines = 2
+        return label
+    }()
+    
+    let websiteLabel: UILabel = {
+        let label = UILabel()
+        label.textColor = UIColor.black
+        label.font = UIFont.systemFont(ofSize: 16)
+        label.textColor = .gray
+        label.numberOfLines = 2
+        return label
+    }()
+    
+    let phoneNumberLabel: UILabel = {
+        let label = UILabel()
+        label.textColor = UIColor.black
+        label.font = UIFont.systemFont(ofSize: 16)
+        label.textColor = .gray
+        label.numberOfLines = 2
+        return label
+    }()
+    
     var restaurant: Restaurant = Restaurant(timings: [], address: "", website: "", phoneNumber: "")
     lazy var presenter: HomePresenter = HomePresenter(view: self)
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.tableView.separatorStyle = .none
+        view.backgroundColor = .white
+        
         tableView.register(RestaurantCell.self, forCellReuseIdentifier: RestaurantCell.id)
         presenter.getData()
         setupViews()
@@ -27,9 +57,12 @@ class HomeViewController: UIViewController {
 
 extension HomeViewController: HomeViewPresenter {
     func getData(data: [Restaurant]) {
-        // Receive restaurant data from presenter
         restaurant = data[0]
-        tableView.reloadData() // Refresh the table view with new data
+        addressLabel.text = restaurant.address
+        websiteLabel.text = restaurant.website
+        phoneNumberLabel.text = restaurant.phoneNumber
+        tableView.reloadData()
+        
     }
 }
 
@@ -42,11 +75,8 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: RestaurantCell.id, for: indexPath) as! RestaurantCell
         let timing = restaurant.timings[indexPath.row]
-        
-        // Configure cell with restaurant data
         cell.dayLabel.text = timing.day
         cell.workingHoursLabel.text = timing.schedule
-        print( restaurant)
         return cell
     }
 }
