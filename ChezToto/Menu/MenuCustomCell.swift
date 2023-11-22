@@ -96,15 +96,10 @@ class CustomCell: UITableViewCell {
     
     override func layoutSubviews() {
             super.layoutSubviews()
-
             let margin: CGFloat = 10
             contentView.frame = contentView.frame.inset(by: UIEdgeInsets(top: margin, left: margin, bottom: margin, right: margin))
-
-            // Apply corner radius to the cell's content view
             contentView.layer.cornerRadius = 15
             contentView.layer.masksToBounds = true
-
-            // Add a bit of spacing between cells
             contentView.layer.borderWidth = 1
             contentView.layer.borderColor = UIColor(ciColor: .gray).withAlphaComponent(0.5).cgColor
         }

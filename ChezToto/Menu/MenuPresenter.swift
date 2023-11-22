@@ -21,7 +21,7 @@ class Presenter {
             self.view.getData(data: menu)
         } else {
             // Handle error or absence of data
-            self.view.getData(data: [:]) // Sending an empty dictionary as an example
+            self.view.getData(data: [:])
         }
     }
 }

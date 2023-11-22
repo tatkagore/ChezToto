@@ -11,15 +11,15 @@ extension MenuViewController {
         // Create main stack view
         let mainStackView = UIStackView()
         mainStackView.translatesAutoresizingMaskIntoConstraints = false
-        mainStackView.axis = .vertical // Main stack view is vertical
+        mainStackView.axis = .vertical
 
         // Create  vertical stack view for entries and pizzas
         let verticalStackView = UIStackView()
         verticalStackView.translatesAutoresizingMaskIntoConstraints = false
-        verticalStackView.axis = .vertical // Entries and Pizzas are arranged horizontally
+        verticalStackView.axis = .vertical
         verticalStackView.distribution = .fillEqually
-        verticalStackView.spacing = 10 // Set the spacing between Entries and Pizzas table views
-
+        verticalStackView.spacing = 10
+        
         // Add Entries TableView to the horizontal stack view
         guard let tableView = tableView else { return }
         tableView.translatesAutoresizingMaskIntoConstraints = false

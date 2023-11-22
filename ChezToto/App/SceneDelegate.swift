@@ -15,10 +15,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
 
         // Create an instance of your MenuViewController
-        let menuViewController = HomeViewController()
+        let homeViewController = HomeViewController()
 
         // Embed the MenuViewController in a UINavigationController
-        let navigationController = UINavigationController(rootViewController: menuViewController)
+        let navigationController = UINavigationController(rootViewController: homeViewController)
 
         // Create a UIWindow using the windowScene constructor
         let window = UIWindow(windowScene: windowScene)
