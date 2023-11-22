@@ -64,7 +64,7 @@ extension HomeViewController {
             bannerImageView.topAnchor.constraint(equalTo: view.topAnchor),
             bannerImageView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             bannerImageView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            bannerImageView.heightAnchor.constraint(equalToConstant: 180)
+            bannerImageView.heightAnchor.constraint(equalToConstant: 190)
         ])
         NSLayoutConstraint.activate([
             tableView.topAnchor.constraint(equalTo: bannerImageView.bottomAnchor),
